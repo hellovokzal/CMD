@@ -1,6 +1,6 @@
 import requests as r
-import telebot
-bot = telebot.TeleBot("6219995606:AAG4jYJoXYOIMJuBoHDTQ9dU8X9IEjIU6xc")
+import telebot as b
+bot = b.TeleBot("6219995606:AAG4jYJoXYOIMJuBoHDTQ9dU8X9IEjIU6xc")
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(messsge.chat.id, "Привет, напиши команду /help, чтобы узнать подробнее команд")

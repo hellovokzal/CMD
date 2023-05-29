@@ -1,5 +1,5 @@
-import requests
-import telebot as r
+import requests as r
+import telebot
 bot = telebot.TeleBot("6219995606:AAG4jYJoXYOIMJuBoHDTQ9dU8X9IEjIU6xc")
 @bot.message_handler(commands=['start'])
 def start(message):

@@ -1,6 +1,6 @@
 import requests as r
-import telebot as b
-bot = b.TeleBot("6219995606:AAG4jYJoXYOIMJuBoHDTQ9dU8X9IEjIU6xc")
+import telebot
+bot = telebot.TeleBot("6219995606:AAG4jYJoXYOIMJuBoHDTQ9dU8X9IEjIU6xc")
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(messsge.chat.id, "Привет, напиши команду /help, чтобы узнать подробнее команд")
@@ -13,6 +13,6 @@ def check(message):
     bot.send_message(message.chat.id, f"Проверяем ссылку {url}...")
     try:
         link = r.get(url)
-        bot.send_message(message.chat.id, f"Ссылка работает!\nКод: {r.status_code}")
+        bot.send_message(message.chat.id, f"Ссылка работает!\nКод: {link.status_code}")
     except:
-        bot.send_message(message.chat.id, f"Ссылка не работает!\nКод: {r.status_code}")
+        bot.send_message(message.chat.id, f"Ссылка не работает!\nКод: {link.status_code}")

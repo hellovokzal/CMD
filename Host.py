@@ -42,3 +42,4 @@ def starting(message):
             bot.send_message(message.chat.id, f"Ответ: {started}")
         except:
             bot.send_message(message.chat.id, "Неправильно ввели!")
+bot.polling()

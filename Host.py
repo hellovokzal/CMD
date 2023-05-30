@@ -18,5 +18,5 @@ def check(message):
         except:
             bot.send_message(message.chat.id, f"Ссылка не работает!\nКод: {link.status_code}")
     except:
-        bot.send_message(message.chat.id, "Ссылка не работает!\nКод: {link.status_code}")
+        bot.send_message(message.chat.id, f"Ссылка не работает!\nКод: {link.status_code}")
 bot.polling()

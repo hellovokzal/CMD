@@ -11,20 +11,24 @@ def help(message):
     bot.send_message(message.chat.id, "Список команд:\n/on - Включить рандомизацию для всех пользователей\n/off - Выключить рандомизацию для всех пользователей\n/check_randomizator - Чекает включены или нет рандомизаторы\n/starting <свой пример> - вводите свой любой пример и если включена команда /on, то будет рандомизировать текст либо пример")
 @bot.message_handler(commands=['on'])
 def on(message):
+    global randomizator
     randomizator = "on"
     bot.send_message(message.chat.id, "Для всех пользователей была включена рандомизация")
 @bot.message_handler(commands=['off'])
 def off(message):
+    global randomizator
     randomizator = "off"
     bot.send_message(message.chat.id, "Для всех пользователей была выключена рандомизация")
 @bot.message_handler(commands=['check_randomizator'])
 def check_randomizator(message):
+    global randomizator
     if randomizator == "on":
         bot.send_message(message.chat.id, f"Рандомизатор включен\nКод рандомизатора: {randomizator}")
     else:
         bot.send_message(message.chat.id, f"Рандомизатор выключен\nКод рандомизации: {randomizator}")
 @bot.message_handler(commands=['starting'])
 def starting(message):
+    global randomizator
     num = random.randint(0, 4)
     if randomizator == "on":
         if num == 0 or num == 1:

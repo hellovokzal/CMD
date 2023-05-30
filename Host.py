@@ -8,8 +8,15 @@ def start(message):
     bot.send_message(message.chat.id, "Введи /help, чтобы узнать все")
 @bot.message_handler(commands=['help'])
 def help(message):
-    bot.send_message(message.chat.id, "Список команд:\n/on - Включить рандомизацию для всех пользователей\n/off - Выключить рандомизацию для всех пользователей\n/check_randomizator - Чекает включены или нет рандомизаторы\n/starting <свой пример> - вводите свой любой пример и если включена команда /on, то будет рандомизировать текст либо пример")
+    try:
+        bot.send_message(message.chat.id, "Список команд:\n/on - Включить рандомизацию для всех пользователей\n/off - Выключить рандомизацию для всех пользователей\n/check_randomizator - Чекает включены или нет рандомизаторы\n/starting <свой пример> - вводите свой любой пример и если включена команда /on, то будет рандомизировать текст либо пример")
+    except:
+        bot.send_message(message.chat.id, "Ошибка команды, введи команду /твоя_мама")
+@bot.message_handler(commands=['твоя_мама'])
+def твоя_мама(message):
+    bot.send_message(message.chat.id, "Ладно, пошел нахуй")
 @bot.message_handler(commands=['on'])
+
 def on(message):
     global randomizator
     randomizator = "on"

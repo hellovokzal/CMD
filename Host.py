@@ -1,6 +1,7 @@
 import telebot
 import random
 import time
+randomizator = "off"
 bot = telebot.TeleBot("5879556659:AAH4ghYVO0Iq99pJN9ilqD7LbGDl9ddTXwY")
 @bot.message_handler(commands=['start'])
 def start(message):

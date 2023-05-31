@@ -7,7 +7,7 @@ import requests
 import random
 import time
 
-bot = telebot.TeleBot("YOUR_TOKEN_HERE")
+bot = telebot.TeleBot("5774530553:AAG053m3utCV0mETOlJFKBllH-7gj5JFF7A")
 
 @bot.message_handler(commands=['start'])
 def start(message):
